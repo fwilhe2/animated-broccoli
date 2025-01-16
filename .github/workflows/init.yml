@@ -1,0 +1,21 @@
+name: CI
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  amd:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: DoSomething
+      run: |
+        uname -a
+
+  arm:
+    runs-on: ubuntu-24.04-arm
+    steps:
+    - uses: actions/checkout@v4
+    - name: DoSomething
+      run: |
+        uname -a
